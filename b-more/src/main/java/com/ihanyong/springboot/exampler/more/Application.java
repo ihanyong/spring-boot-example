@@ -14,7 +14,6 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.GenericToStringSerializer;
 import org.springframework.data.redis.serializer.RedisSerializer;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 /**
  * @author hanyong
@@ -37,9 +36,9 @@ public class Application extends SpringBootServletInitializer {
     public DataSource dataSource() {
         DataSource ds = new DataSource();
         ds.setDriverClassName("com.mysql.jdbc.Driver");
-        ds.setUrl("jdbc:mysql://172.16.1.181:3306/tbb_account_rd?characterEncoding=utf-8");
-        ds.setUsername("tbb_account_rd");
-        ds.setPassword("tbb_account_rd");
+        ds.setUrl("jdbc:mysql://hostname:port/db_name?characterEncoding=utf-8");
+        ds.setUsername("db_user_name");
+        ds.setPassword("db_password");
 
         ds.setTestOnBorrow(true);
         ds.setTestWhileIdle(true);
@@ -51,10 +50,10 @@ public class Application extends SpringBootServletInitializer {
     public JedisConnectionFactory jedisConnectionFactory() {
         JedisConnectionFactory factory = new JedisConnectionFactory();
 
-        factory.setHostName("172.16.1.22");
-        factory.setPort(6384);
-        factory.setPassword("tbbkfTEST");
-        factory.setDatabase(9);
+        factory.setHostName("host_name");
+        factory.setPort(6739);
+        factory.setPassword("password");
+        factory.setDatabase(1);
         factory.setUsePool(true);
         return factory;
 
