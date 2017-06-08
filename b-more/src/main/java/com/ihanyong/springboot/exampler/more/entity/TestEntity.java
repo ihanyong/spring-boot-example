@@ -2,6 +2,8 @@ package com.ihanyong.springboot.exampler.more.entity;/**
  * Created by hanyong on 2017/6/5.
  */
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -19,6 +21,7 @@ public class TestEntity implements Serializable {
             pkColumnValue = "t_test_id", initialValue = 1, allocationSize = 50)
     private Long id;
 
+    @NotEmpty
     private String name;
 
     @Version
