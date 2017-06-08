@@ -33,15 +33,15 @@ public class SampleController extends SpringBootServletInitializer {
      * spring boot 的启动方法
      * @param args
      */
-//    public static void main(String[] args) {
-//        SpringApplication.run(SampleController.class, args);
-//    }
-
     public static void main(String[] args) {
-        new SpringApplication(SampleController.class)
-//                .addListeners(new )
-                .run(args);
+        SpringApplication.run(SampleController.class, args);
     }
+
+//    public static void main(String[] args) {
+//        new SpringApplication(SampleController.class)
+////                .addListeners(new )
+//                .run(args);
+//    }
 
 
     /**
